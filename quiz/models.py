@@ -27,3 +27,8 @@ class QuizModels(models.Model):
         ("opt4", "opt4"),
     ]
     answer = models.CharField(max_length=255, choices=ANSWER_OPTIONS)
+
+
+class QuizResulModel(models.Model):
+    score = models.IntegerField()
+    user = models.ForeignKey(UserInfoModel, on_delete=models.CASCADE)

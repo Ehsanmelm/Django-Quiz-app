@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<h1> Satart Quiz </h1>
+
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        {% for i in questions %}
+        <label>{{i.question}} : </label>
+        <br>
+        <input type="hidden" name="question_id" value="{{i.id}}">
+        <input type="radio" name="{{i.id}}" value="opt1" id="q1a"><label for="q1a">{{i.opt1}}</label><br /><br>
+        <input type="radio" name="{{i.id}}" value="opt2" id="q1a"><label for="q1a">{{i.opt2}}</label><br /><br>
+        <input type="radio" name="{{i.id}}" value="opt3" id="q1a"><label for="q1a">{{i.opt3}}</label><br /><br>
+        <input type="radio" name="{{i.id}}" value="opt4" id="q1a"><label for="q1a">{{i.opt4}}</label><br /><br>
+        {% endfor%}
+        <br>
+        <button>Send</button>
+        <br>
+        <hr style="color:red">
+        {{msg}}
+        <hr style="color:red">
+        <br>
+        <h2 style="color: rgb(159, 12, 12);"></h2>
+        {% for i ,j in wrong_answers%}
+        <h3>{{i}} ---------> {{j}}</h3>
+        {% endfor%}
+    </form>
+
+</body>
+
+</html>
