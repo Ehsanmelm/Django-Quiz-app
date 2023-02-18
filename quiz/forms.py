@@ -7,3 +7,4 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = UserInfoModel
         fields = '__all__'
+        exclude = ["slug"]

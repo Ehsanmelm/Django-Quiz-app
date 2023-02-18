@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <form method="POST">
         {% csrf_token%}
         <label for="name">user name: </label>
@@ -19,9 +20,12 @@
         <input type="password" name="password">
         <br>
         <br>
-        <h2 style="color: red;">{{msg}}</h2>
+        {% if not is_sign_in%}
+        <h2 style="color: red;">{{msg}} <a href="{% url 'signin_page' %}"> Go and Sign In</a></h2>
+        {% endif %}
         <button>Log In </button>
     </form>
+
 
 </body>
 

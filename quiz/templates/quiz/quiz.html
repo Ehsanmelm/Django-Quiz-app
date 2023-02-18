@@ -26,7 +26,9 @@
         <br>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray"> {{msg}}
         <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        {% if is_done %}
         <h2 style="color: rgb(159, 12, 12);">Mistakes</h2>
+        {% endif%}
         {% for i ,j in wrong_answers%}
         <h3>{{i}} ---------> {{j}}</h3>
         {% endfor%}

@@ -9,6 +9,7 @@ class UserInfoModel(models.Model):
     user_name = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
+    slug = models.SlugField(default="", unique=True)
 
     def __str__(self):
         return self.user_name
@@ -32,3 +33,6 @@ class QuizModels(models.Model):
 class QuizResulModel(models.Model):
     score = models.IntegerField()
     user = models.ForeignKey(UserInfoModel, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.user}"
