@@ -1,5 +1,3 @@
-from cProfile import label
-from multiprocessing.connection import answer_challenge
 from django.db import models
 
 # Create your models here.
