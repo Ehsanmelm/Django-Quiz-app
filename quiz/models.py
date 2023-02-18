@@ -32,5 +32,5 @@ class QuizResulModel(models.Model):
     score = models.IntegerField()
     user = models.ForeignKey(UserInfoModel, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return f"{self.user}"
+    # def __str__(self):
+    #     return f"{self.user} {self.score}"
